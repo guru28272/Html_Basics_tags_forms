@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- there is an attribute called method=GET & method=POST
+        but for signup form POST is the suitable attribute for
+        forms -->
+    <!-- POST tells that, post this signup info 
+        to the server and it will update to database -->
+    <!-- for now GET is used,because we did not set the server & 
+        that is backend part -->
+    <!-- POST is secured -->
+
+    <!-- enctype---tells that the form consists lots of data,
+        so the file cant send to server in 1 shot,
+        so it divides into multiple parts and send to the server -->
+    <form action="signupresult.html" method="GET" enctype="multipart/form-data">
+
+        <!-- div--- is block tag -->
+        <!-- div--- is used divide the forms into groups or
+            grouping of forms or tags  -->
+        <!-- and we can give id to each div to make styling
+            to particular div later by css -->
+        <!-- instead of giving break to each tag,
+            div is useful in many-ways es-specially in forms -->
+        <!-- but the alignment of forms are done by css only -->
+        <div>
+            <!-- id--- is used for label to tie-up input with label -->
+            <label for="username">User Name</label> <!--label for displaying the name-->
+            <input type="text" name="username" id="username" placeholder="Username" required> <!--input name is for purpose of text-box-->
+        </div>
+        
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="password">Password</label> 
+            <input type="password" name="password" id="password" placeholder="Password"  minlength="8" required>
+        </div>
+
+        <div>
+            <!-- 2nd method of tie-up without for & id
+                but 1st method is preferable -->
+            <label>Confirm Password
+                <input name="confirm password" type="password" placeholder="Confirm Password" minlength="8" required>
+            </label>
+        </div>
+
+        <div>
+            <label for="dateofbirth">Date Of Birth</label>
+            <input type="date" name="dateofbirth" id="dateofbirth" min="1900-01-01">
+        </div>
+
+        <div>
+            <label for="comments">Comments</label>
+            <textarea name="comments" id="comments" cols="30" rows="4"></textarea>
+        </div>
+
+        <div>
+            <input type="checkbox" name="smsalert" id="smsalert">
+            <label for="smsalert">SMS Alert</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="emailalert" id="emailalert">
+            <label for="emailalert">Email Alert</label>
+        </div>
+
+        <!-- name in input is kept same to make a same group
+            because the user must select anyone -->
+        <!-- if name is set same to form group then,
+            we must give the value to input to gender identification
+            to database -->
+        <div>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Male</label>
+        </div>
+
+        <div>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label>
+        </div>
+
+        <!-- select tag--- is used for drop down method -->
+        <!-- state is a field 
+             selected state is a value of field 
+             name and value will be send to the server
+             name and value is a pair-->
+        <div>
+            <select name="state" id="state">
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="AP" label="AP"></option>
+                <option value="Kerala">Kerala</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Telungana">Telungana</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="file">Resume</label>
+            <input type="file" name="file" id="file">
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+        <!-- input img type -->
+        <!-- <input type="image" src=""> -->
+        
+    </form>
+</body>
+</html>
